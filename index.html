@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hai REVA ❤️</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<script src="script.js"></script>
+<body>
+
+<div class="container">
+
+    <h1 class="title">❤️ HAI INI REPUYY :</h1>
+
+    <p class="main-text">
+        Aku cuma mau bilang...<br><br>
+        Kadang perasaan itu aneh ya hehehhe baru juga kenal sudah nyaman,<br>
+        Semoga ada kesempatan buat kita bersama wkwk😌
+    </p>
+
+    <!-- GALERI FOTO -->
+    <div class="photo-gallery">
+        <img src="w.jpeg" alt="foto1">
+        <img src="u.jpeg" alt="foto2">
+        <img src="r.jpeg" alt="foto3">
+        <img src="p.jpeg" alt="foto4">
+    </div>
+
+    <div class="quotes">
+        <p>💔 "Friendzone itu bukan gagal mencintai, tapi berhasil menyembunyikan rasa."</p>
+        <p>🌱 "Kalau dia bahagia sebagai teman, mungkin itu peranku untuk sekarang."</p>
+        <p>✨ "Cinta tak harus memiliki, kadang cukup melihat dia tersenyum."</p>
+        <p>🫶 "Walau cuma teman, doaku tetap kamu."</p>
+        <p>🚶 "Jika suatu hari kamu sadar, aku masih di sini… sebagai teman terbaikmu."</p>
+        <p>🚶 "Jika ada kesempatan aku dan kamu bisa sama sama yaaaaaa...."</p>
+    </div>
+
+    <div class="btn-group">
+        <button class="btn" onclick="showLove()">Klik Aku</button>
+        <a href="profile.html" class="btn btn-secondary">Lihat Profil</a>
+    </div>
+
+</div>
+
+<audio id="bgMusic" loop preload="auto" autoplay>
+    <source src="romantis.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function showLove(){
+    alert("Aku sayang kamu… tapi kita temenan dulu  yaaaa PLISS JANGAN SAMA YANG LAIN DULU  wkwkwkw😭💕");
+}
+
+const music = document.getElementById("bgMusic");
+music.volume = 0.4;
+
+window.addEventListener("load", () => {
+    music.play().catch(() => {
+        document.addEventListener("click", () => {
+            music.play().catch(()=>{});
+        }, { once: true });
+    });
+});
+function createHeartFloat(){
+    const heart = document.createElement("div");
+    heart.className = "heart-float";
+    heart.innerHTML = "💗";
+
+    heart.style.left = Math.random()*100 + "vw";
+    heart.style.animationDuration = (Math.random()*4 + 4) + "s";
+    heart.style.fontSize = (Math.random()*10 + 14) + "px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },8000);
+}
+
+setInterval(createHeartFloat, 900);
+</script>
+
+</body>
+</html>
+<!-- MUSIC -->
+<audio id="bgMusic" loop preload="auto" autoplay>
+    <source src="romantis.mp3" type="audio/mpeg">
+</audio>
+
+<!-- PANGGIL JS -->
+<script src="C:\web tak seberapa\script.js"></script>
+</body>
+</html>
