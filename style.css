@@ -1,0 +1,239 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background: linear-gradient(135deg,#ff9a9e,#fad0c4);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+/* CONTAINER */
+.container{
+    background:white;
+    padding:35px;
+    border-radius:20px;
+    width:340px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* TITLE */
+.title{
+    color:#ff4b7d;
+    margin-bottom:15px;
+}
+
+/* TEXT */
+.main-text{
+    color:#555;
+    margin-bottom:15px;
+}
+
+.quotes{
+    text-align:left;
+    font-size:13px;
+    color:#666;
+    margin-bottom:20px;
+}
+
+.quotes p{
+    margin:6px 0;
+}
+
+.profile-text{
+    color:#555;
+    margin:15px 0;
+}
+
+/* FOTO */
+.photo-frame{
+    width:150px;
+    height:150px;
+    margin:0 auto 15px;
+    border-radius:50%;
+    overflow:hidden;
+    border:4px solid #ff4b7d;
+}
+
+.photo-frame img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* FILE INPUT */
+.file-input{
+    margin:10px 0 15px;
+}
+
+/* BUTTON */
+.btn{
+    display:inline-block;
+    padding:10px 20px;
+    background:#ff4b7d;
+    color:white;
+    border:none;
+    border-radius:25px;
+    text-decoration:none;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#ff1f5a;
+    transform:scale(1.05);
+}
+
+.btn-secondary{
+    background:#888;
+    margin-left:8px;
+}
+
+.btn-group{
+    margin-top:10px;
+}
+/* ===== GALERI FOTO ===== */
+.photo-gallery{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:10px;
+    margin:15px 0 20px;
+}
+
+.photo-gallery img{
+    width:100%;
+    height:100px;
+    object-fit:cover;
+    border-radius:12px;
+    transition:0.3s;
+    cursor:pointer;
+    box-shadow:0 4px 10px rgba(0,0,0,0.15);
+}
+
+.photo-gallery img:hover{
+    transform:scale(1.08) rotate(2deg);
+}
+/* ===============================
+   🌸 BUNGA BERMEKAR BACKGROUND
+================================= */
+
+/* layer bunga mekar */
+body::before{
+    content:"🌸 🌷 🌺 🌸 🌼 🌺 🌷 🌸";
+    position:fixed;
+    inset:0;
+    font-size:32px;
+    opacity:0.18;
+    pointer-events:none;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-around;
+    align-content:space-around;
+    animation:bloomFloat 12s ease-in-out infinite alternate;
+}
+
+/* layer daun bertaburan */
+body::after{
+    content:"🍃 🍃 🍂 🍃 🍂 🍃 🍃 🍂 🍃";
+    position:fixed;
+    top:-10%;
+    left:-10%;
+    width:120%;
+    height:120%;
+    font-size:22px;
+    opacity:0.25;
+    pointer-events:none;
+    animation:leafDrift 18s linear infinite;
+}
+
+/* animasi bunga mekar pelan */
+@keyframes bloomFloat{
+    0%{
+        transform:scale(0.95) rotate(0deg);
+        filter:blur(0.3px);
+    }
+    50%{
+        transform:scale(1.05) rotate(1deg);
+        filter:blur(0px);
+    }
+    100%{
+        transform:scale(0.98) rotate(-1deg);
+        filter:blur(0.2px);
+    }
+}
+
+/* animasi daun beterbangan */
+@keyframes leafDrift{
+    0%{
+        transform:translateY(-5%) translateX(0) rotate(0deg);
+    }
+    100%{
+        transform:translateY(120vh) translateX(-8%) rotate(360deg);
+    }
+}
+/* =================================
+   💗 BACKGROUND BERUBAH WARNA
+================================= */
+
+body{
+    animation:bgPulse 2s ease-in-out infinite alternate;
+}
+
+/* animasi gradasi pink */
+@keyframes bgPulse{
+    0%{
+        background: linear-gradient(135deg,#ff9a9e,#fad0c4);
+    }
+    50%{
+        background: linear-gradient(135deg,#ff7eb3,#ffb6c1);
+    }
+    100%{
+        background: linear-gradient(135deg,#ff9a9e,#ffc1cc);
+    }
+}
+
+
+body .heart-float{
+    position:fixed;
+    top:-10vh;
+    font-size:18px;
+    opacity:0.6;
+    pointer-events:none;
+    animation:heartFall linear infinite;
+    z-index:0;
+}
+
+@keyframes heartFall{
+    0%{
+        transform:translateY(-10vh) translateX(0) rotate(0deg);
+        opacity:0;
+    }
+    20%{
+        opacity:0.7;
+    }
+    100%{
+        transform:translateY(110vh) translateX(40px) rotate(360deg);
+        opacity:0;
+    }
+}
+.heart-float{
+    position:fixed;
+    top:-20px;
+    pointer-events:none;
+    z-index:0;
+    animation:heartUp linear forwards;
+}
+
+@keyframes heartUp{
+    to{
+        transform:translateY(110vh);
+        opacity:0;
+    }
+}
